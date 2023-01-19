@@ -1,7 +1,11 @@
 ---
 - name: Install GVFS schemas
   apt:
-    name: gvfs-backends
+    name: "{{ packages }}"
     state: latest
     update_cache: true
     install_recommends: false
+  vars:
+    packages:
+      - gvfs-backends
+      - libglib2.0-bin
