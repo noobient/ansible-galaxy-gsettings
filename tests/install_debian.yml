@@ -1,0 +1,7 @@
+---
+- name: Install GVFS schemas
+  apt:
+    name: gvfs-backends
+    state: latest
+    update_cache: true
+    install_recommends: false

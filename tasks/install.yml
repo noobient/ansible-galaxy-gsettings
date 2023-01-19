@@ -1,0 +1,7 @@
+---
+- name: Install GLib schema complier
+  package:
+    name: "{% if ansible_os_family == 'RedHat' %}glib2{% else %}libglib2.0-bin{% endif %}"
+    state: latest
+  register: installed_glibcompiler
+  when: installed_glibcompiler is not defined

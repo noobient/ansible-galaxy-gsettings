@@ -1,0 +1,20 @@
+---
+- hosts: 127.0.0.1
+  tasks:
+    - include_tasks: install_debian.yml
+      when: ansible_os_family == 'Debian'
+    - include_tasks: install_redhat.yml
+      when: ansible_os_family == 'RedHat'
+
+    - include_tasks: check.yml
+
+    - include_role:
+        name: "{{ playbook_dir.split('/')[:-1] | last }}"
+      vars:
+        filename: '20_corporate-settings'
+        section: 'org.gnome.system.smb'
+        option: 'workgroup'
+        value: "'AD'"
+
+    - meta: flush_handlers
+    - include_tasks: check.yml

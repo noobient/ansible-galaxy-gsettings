@@ -1,0 +1,9 @@
+---
+- name: Check current value
+  command:
+    cmd: gsettings get org.gnome.system.smb workgroup
+  changed_when: false
+  register: check_gsettings
+
+- debug:
+    msg: "{{ check_gsettings.stdout }}"

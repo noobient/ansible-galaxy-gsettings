@@ -1,0 +1,5 @@
+---
+- name: Install GVFS schemas
+  dnf:
+    name: gvfs
+    state: latest
