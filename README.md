@@ -17,7 +17,7 @@ This role lets you override global defaults for GSettings.
 
 ```yml
 - include_role:
-    name: bviktor.gsettings
+    name: noobient.gsettings
   vars:
     filename: '20_corporate-settings'
     section: 'org.gnome.system.smb'
