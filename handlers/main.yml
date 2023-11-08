@@ -1,4 +1,5 @@
 ---
-- name: Compile GLib schema
+# It's a handler, linter shouldn't whine but does anyway
+- name: Compile GLib schema # noqa no-changed-when
   command:
     cmd: glib-compile-schemas /usr/share/glib-2.0/schemas

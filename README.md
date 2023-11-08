@@ -1,4 +1,4 @@
-# bviktor.gsettings
+# noobient.gsettings
 
 ## Synopsys
 
